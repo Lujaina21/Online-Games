@@ -30,24 +30,6 @@ project-directory
 └── README.md               # Project documentation
 ```
 
-## Setup and Installation
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/your-repo/online-games-viewer.git
-   ```
-
-2. **Navigate to Project Directory**
-   ```bash
-   cd online-games-viewer
-   ```
-
-3. **Install Dependencies**
-   No additional dependencies are required as this is a vanilla JavaScript project. Just ensure you have an internet connection for fetching the API.
-
-4. **Run the Application**
-   Open `index.html` in a browser to start the application.
-
 ## Usage
 1. Navigate through different game categories using the navigation bar.
 2. Click on a game card to view its details.
