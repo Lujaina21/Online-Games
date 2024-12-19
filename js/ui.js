@@ -16,7 +16,10 @@ export class DisplayUI {
 
                 <figcaption>
                   <div class="d-flex justify-content-between py-2">
-                    <h3 class="text-white small">${game[i].title}</h3>
+                    <h3 class="text-white small">${game[i].title
+                      .split(" ")
+                      .slice(0, 3)
+                      .join(" ")}</h3>
                     <span class="badge p-2 bg-primary">Free</span>
                   </div>
 
