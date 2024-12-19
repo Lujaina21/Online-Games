@@ -21,15 +21,15 @@ export class Details {
     };
 
     try {
-      const detailsAPI = await fetch(
+      const url = await fetch(
         `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${gameID}`,
         options
       );
 
-      if (!detailsAPI.ok) {
-        throw new Error(`Error! Status: ${detailsAPI.status}`);
+      if (!url.ok) {
+        throw new Error(`Error! Status: ${url.status}`);
       }
-      const response = await detailsAPI.json();
+      const response = await url.json();
       console.log("Game details response: ", response);
       this.DisplayUI.displayContent(response);
     } catch (error) {
