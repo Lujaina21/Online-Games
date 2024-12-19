@@ -9,7 +9,7 @@ export class DisplayUI {
                 <figure class="position-relative">
                   <img
                     class="card-img-top object-fit-cover h-100"
-                    src="${game.thumbnail}"
+                    src="${game[i].thumbnail}"
                     alt="Game Image"
                   />
                 </figure>
