@@ -18,14 +18,13 @@ project-directory
 │
 ├── imgs/
 │   ├── header.png          # Header image
-│   ├── logo.png            # Application logo
 │   ├── logo-sm.png         # Small logo
 │
 ├── js/
 │   ├── main.js             # Entry point
 │   ├── games.js            # Handles fetching and displaying games
 │   ├── details.js          # Handles fetching and displaying game details
-│   ├── ui.js               # Manages DOM manipulation
+│   ├── ui.js               # Manages DOM manipulation and displaying the UI
 │
 ├── index.html              # Main HTML file
 └── README.md               # Project documentation
