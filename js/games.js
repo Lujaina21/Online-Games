@@ -40,6 +40,7 @@ export class Games {
     document.querySelectorAll(".card").forEach((card) => {
       card.addEventListener("click", () => {
         let id = card.dataset.id;
+        console.log("Card clicked, gameID:", id);
         this.showDetails(id);
       });
     });
@@ -47,7 +48,7 @@ export class Games {
 
   showDetails(gameID) {
     new Details(gameID);
-    document.querySelector(".games").classList.add("d-none");
+    document.querySelector(".games").classList.replace("d-block", "d-none");
     document.querySelector(".details").classList.replace("d-none", "d-block");
   }
 }

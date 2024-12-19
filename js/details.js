@@ -1,17 +1,16 @@
 import { DisplayUI } from "./ui.js";
+
 export class Details {
   constructor(id) {
     this.DisplayUI = new DisplayUI();
-
     document.querySelector("#btnClose").addEventListener("click", () => {
-      document.querySelector(".home").classList.remove("d-none");
-      document.querySelector(".details").classList.add("d-none");
+      document.querySelector(".games").classList.replace("d-none", "d-block"); // Show the games section
+      document.querySelector(".details").classList.replace("d-block", "d-none"); // Hide the details section
     });
-
-    this.apiDetails(id);
+    this.contentDetails(id);
   }
 
-  async apiDetails(gameID) {
+  async contentDetails(gameID) {
     const options = {
       method: "GET",
       headers: {
@@ -19,13 +18,21 @@ export class Details {
         "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
       },
     };
-    const api = await fetch(
-      `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${gameID}`,
-      options
-    );
-    const response = await api.json();
-    console.log(response);
 
-    this.DisplayUI.displayContent(response);
+    try {
+      const detailsAPI = await fetch(
+        `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${gameID}`,
+        options
+      );
+
+      if (!detailsAPI.ok) {
+        throw new Error(`Error! Status: ${detailsAPI.status}`);
+      }
+      const response = await detailsAPI.json();
+      console.log("Game details response: ", response);
+      this.DisplayUI.displayContent(response);
+    } catch (error) {
+      console.error("Error fetching game details: ", error);
+    }
   }
 }
