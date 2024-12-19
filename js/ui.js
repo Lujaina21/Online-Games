@@ -45,18 +45,18 @@ export class DisplayUI {
               />
             </div>
             <div class="col-md-8">
-              <p class="fs-3">${data.title}</p>
+              <p class="fs-3">${content.title}</p>
               <p>
                 Category:
-                <span class="badge text-bg-info"> ${data.genre}</span>
+                <span class="badge text-bg-info"> ${content.genre}</span>
               </p>
               <p>
                 Platform:
-                <span class="badge text-bg-info">${data.platform}</span>
+                <span class="badge text-bg-info">${content.platform}</span>
               </p>
               <p>
                 Status:
-                <span class="badge text-bg-info">${data.status}</span>
+                <span class="badge text-bg-info">${content.status}</span>
               </p>
               <p class="details-p">
               ${content.description}

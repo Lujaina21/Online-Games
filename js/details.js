@@ -24,6 +24,8 @@ export class Details {
       options
     );
     const response = await api.json();
+    console.log(response);
+
     this.DisplayUI.displayContent(response);
   }
 }
