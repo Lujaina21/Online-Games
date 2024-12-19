@@ -4,6 +4,7 @@ export class Details {
   constructor(id) {
     this.DisplayUI = new DisplayUI();
     document.querySelector("#btnClose").addEventListener("click", () => {
+      document.querySelector("nav").classList.replace("d-none", "d-block");
       document.querySelector(".games").classList.replace("d-none", "d-block"); // Show the games section
       document.querySelector(".details").classList.replace("d-block", "d-none"); // Hide the details section
     });

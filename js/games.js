@@ -5,10 +5,8 @@ export class Games {
     this.getGames("mmorpg");
     document.querySelectorAll(".nav-link").forEach((link) => {
       link.addEventListener("click", (e) => {
-        document
-          .querySelector(".nav-item .active")
-          .classList.remove("active", "text-info");
-        e.target.classList.add("active", "text-info");
+        document.querySelector(".nav-item .active").classList.remove("active");
+        e.target.classList.add("active");
         this.getGames(e.target.dataset.category);
       });
     });
@@ -48,6 +46,7 @@ export class Games {
 
   showDetails(gameID) {
     new Details(gameID);
+    document.querySelector("nav").classList.add("d-none");
     document.querySelector(".games").classList.replace("d-block", "d-none");
     document.querySelector(".details").classList.replace("d-none", "d-block");
   }
